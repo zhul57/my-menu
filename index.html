@@ -5,41 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的私房菜谱</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f7f7f7; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { text-align: center; color: #ff6b6b; font-size: 24px; margin-bottom: 30px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f7f7f7; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #eee; }
+        h1 { color: #ff6b6b; font-size: 28px; margin: 0 0 10px 0; }
+        .intro { color: #666; font-size: 16px; }
         
-        .recipe { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        .recipe:last-child { border-bottom: none; }
-        
-        /* 图片样式：关键是 width: 100% 让它撑满屏幕宽度 */
+        /* 菜谱卡片样式 */
+        .recipe { margin-bottom: 50px; }
         .recipe-img { 
             width: 100%; 
-            height: 300px; 
+            height: 350px; /* 图片高度稍微加大了一点 */
             object-fit: cover; 
-            border-radius: 8px; 
-            margin-bottom: 15px; 
+            border-radius: 12px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        h2 { margin: 0 0 10px 0; font-size: 20px; }
-        .meta { color: #888; font-size: 14px; margin-bottom: 15px; }
-        p { line-height: 1.6; margin: 8px 0; }
-        .label { font-weight: bold; color: #333; }
+        h2 { margin: 0 0 10px 0; font-size: 24px; color: #2c3e50; }
+        .meta { color: #888; font-size: 14px; margin-bottom: 20px; display: flex; gap: 15px; }
+        .meta span { background: #eee; padding: 2px 8px; border-radius: 4px; }
+
+        h3 { font-size: 18px; margin: 25px 0 10px 0; color: #ff6b6b; border-left: 4px solid #ff6b6b; padding-left: 10px; }
+        
+        /* 食材和步骤列表 */
+        ul, ol { padding-left: 20px; margin: 0; color: #555; }
+        li { margin-bottom: 8px; }
+
+        /* 手机适配微调 */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .recipe-img { height: 250px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🥘 我们家的私房菜单</h1>
+    <header>
+        <h1>🥘 我们家的私房菜单</h1>
+        <div class="intro">用心记录每一顿饭，爱与美食不可辜负。</div>
+    </header>
 
     <div class="recipe">
-        <img src="1.jpg" class="recipe-img" alt="美食图片">
+        <img src="avocado_toast.jpg" class="recipe-img" alt="牛油果吐司">
         
-        <h2>我的拿手菜 (你可以改名字)</h2>
-        <div class="meta">耗时: 20分钟 | 难度: 简单</div>
+        <h2>🥑 能量早餐：太阳蛋牛油果吐司</h2>
+        <div class="meta">
+            <span>🕒 耗时: 10分钟</span>
+            <span>🔥 难度: 简单</span>
+        </div>
         
-        <p><span class="label">需要材料：</span>这里写你的食材，比如土豆、牛肉...</p>
-        <p><span class="label">做法步骤：</span>这里写做法，第一步切菜，第二步下锅...</p>
+        <h3>🛒 需要材料</h3>
+        <ul>
+            <li>全麦吐司 2片</li>
+            <li>熟透的牛油果 1个</li>
+            <li>鸡蛋 1个</li>
+            <li>柠檬汁 半勺</li>
+            <li>盐、黑胡椒、辣椒面 少许</li>
+        </ul>
+
+        <h3>👩‍🍳 做法步骤</h3>
+        <ol>
+            <li>牛油果去核挖出果肉，加入柠檬汁、盐、黑胡椒，用叉子压成泥。</li>
+            <li>平底锅少油，打入鸡蛋煎成单面流心太阳蛋。</li>
+            <li>吐司烤脆，均匀抹上牛油果泥。</li>
+            <li>放上煎蛋，撒一点辣椒面装饰即可。</li>
+        </ol>
+    </div>
+
+    <div class="recipe">
+        <img src="hongshaorou.jpg" class="recipe-img" alt="红烧肉">
+        
+        <h2>🍖 镇宅硬菜：秘制本帮红烧肉</h2>
+        <div class="meta">
+            <span>🕒 耗时: 90分钟</span>
+            <span>🔥 难度: 中等</span>
+        </div>
+        
+        <h3>🛒 需要材料</h3>
+        <ul>
+            <li>五花肉 500克（要三层肥两层瘦）</li>
+            <li>冰糖 一把</li>
+            <li>生姜 4-5片，葱结 1个</li>
+            <li>生抽 3勺，老抽 1勺，料酒 2勺</li>
+            <li>八角 1个，香叶 2片</li>
+        </ul>
+
+        <h3>👩‍🍳 做法步骤</h3>
+        <ol>
+            <li>五花肉切麻将块，冷水下锅加姜片料酒焯水，捞出用温水洗净沥干。</li>
+            <li>锅中少油，小火放入冰糖炒出枣红色糖色，倒入肉块快速翻炒上色。</li>
+            <li>加入葱姜、八角香叶、生抽老抽炒出香味。</li>
+            <li>倒入足量开水没过肉块，大火烧开转小火慢炖 1 小时。</li>
+            <li>最后开大火收汁，直到汤汁浓稠包裹在肉上，挑出香料出锅。</li>
+        </ol>
+    </div>
+
+    <div class="recipe">
+        <img src="strawberry_yogurt.jpg" class="recipe-img" alt="草莓酸奶">
+        
+        <h2>🍓 清新甜点：草莓燕麦酸奶杯</h2>
+        <div class="meta">
+            <span>🕒 耗时: 5分钟</span>
+            <span>🔥 难度: 极简</span>
+        </div>
+        
+        <h3>🛒 需要材料</h3>
+        <ul>
+            <li>浓稠酸奶 1盒</li>
+            <li>新鲜草莓 5-6颗</li>
+            <li>即食燕麦脆/格兰诺拉 小半碗</li>
+            <li>蜂蜜 或 枫糖浆（可选）</li>
+        </ul>
+
+        <h3>👩‍🍳 做法步骤</h3>
+        <ol>
+            <li>草莓洗净，一部分切丁，留一颗切半做装饰。</li>
+            <li>准备一个漂亮的透明杯子。</li>
+            <li>底部铺一层酸奶，撒一层燕麦脆，放一层草莓丁。</li>
+            <li>重复上面步骤再铺一层。</li>
+            <li>顶部放上装饰草莓，淋上一点蜂蜜即可。冷藏一下口感更好！</li>
+        </ol>
     </div>
 
 </div>
