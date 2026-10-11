@@ -56,3 +56,25 @@
  #bistro-app .k-dish-bottom{gap:8px}
 }
 @media(pointer:coarse){#bistro-app .k-card-stepper button{min-width:44px;min-height:44px}}
+/* Discord often gives the Activity a short viewport: show food before the fold. */
+@media(max-height:650px) and (min-width:521px){
+ #bistro-app .k-top{padding:8px 20px}
+ #bistro-app .k-seal{font-size:12px;padding:3px 6px}
+ #bistro-app .k-brand{font-size:20px}
+ #bistro-app .k-connect{padding:4px 20px}
+ #bistro-app .k-layout{padding-top:12px}
+ #bistro-app .k-menu-heading{margin-bottom:6px}
+ #bistro-app .k-menu-heading .k-eyebrow{display:none}
+ #bistro-app .k-menu-heading h1{font-size:22px}
+ #bistro-app .k-browse-tools{padding-top:4px}
+ #bistro-app .k-filters{margin-top:6px;padding-bottom:5px}
+ #bistro-app .k-list-caption{padding:4px 0}
+}
+@media(max-height:650px) and (min-width:800px){
+ #bistro-app .k-browse-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;align-items:center}
+ #bistro-app .k-search{grid-column:1/-1}
+ #bistro-app .k-filters{min-width:0;border:0;margin:6px 0 0}
+ #bistro-app .k-filters button{padding:4px 9px}
+ #bistro-app .k-quick-filters{padding:5px 0 0;gap:5px}
+ #bistro-app .k-quick-filters button{font-size:10px;padding:3px 8px}
+}
