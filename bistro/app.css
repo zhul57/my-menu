@@ -18,3 +18,41 @@
 @media(max-width:520px){body{padding:0}#bistro-app .k-layout{grid-template-columns:1fr}#bistro-app .k-side{position:static;padding:20px 0 0;border-left:0;border-top:1px solid var(--k-rule)}#bistro-app .k-ticket{max-height:none}#bistro-app .k-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#bistro-app .k-dish-copy{padding:8px}#bistro-app .k-card-heading h3{font-size:15px}#bistro-app .k-dish .k-note{display:none}#bistro-app .k-dish .k-meta{margin:8px 0;font-size:10px}#bistro-app .k-dish-bottom{flex-wrap:wrap}#bistro-app .k-mobile-cart{display:flex;margin:0 0 14px}#bistro-app .k-drawer-shade{padding:8px}#bistro-app .k-drawer{padding:0 18px}#bistro-app .k-detail-top,#bistro-app .k-recipe-body{grid-template-columns:1fr;gap:18px}#bistro-app .k-detail-top img{max-height:240px}#bistro-app .k-drawer-bar{padding:10px 0}#bistro-app .k-menu-heading{flex-wrap:nowrap}#bistro-app .k-menu-heading h1{font-size:22px}#bistro-app .k-browse-tools{top:0}}
 
 #bistro-app .k-editor fieldset{border:0;padding:0;margin:0;min-width:0}
+
+/* Clear selection feedback, quiet filtering and a reachable mobile table. */
+#bistro-app .k-dish-selected{border-color:var(--k-green);box-shadow:0 0 0 1px var(--k-green)}
+#bistro-app .k-selected-badge{position:absolute;left:9px;bottom:9px;padding:4px 9px;border-radius:20px;background:var(--k-green);color:var(--k-on);font-size:11px;box-shadow:0 2px 8px #0003}
+#bistro-app .k-card-stepper{gap:0;background:var(--k-soft);border-radius:6px;overflow:hidden;flex-shrink:0}
+#bistro-app .k-card-stepper button{width:32px;min-height:34px;border:0;background:transparent}
+#bistro-app .k-card-stepper span{min-width:22px;text-align:center;font-size:13px}
+#bistro-app .k-quick-filters{display:flex;gap:7px;padding:2px 0 10px;flex-wrap:wrap}
+#bistro-app .k-quick-filters button{min-height:30px;border:1px solid var(--k-rule);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--k-sub)}
+#bistro-app .k-quick-filters button[aria-pressed=true]{border-color:var(--k-green);background:var(--k-soft);color:var(--k-green)}
+#bistro-app .k-empty-page{grid-column:1/-1;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center}
+#bistro-app .k-ai-pick{padding:16px 0;border-top:1px solid var(--k-rule)}
+#bistro-app .k-ai-pick h3{font:600 20px/1.4 'Songti SC',serif}
+#bistro-app .k-ai-pick p{font-size:13px;margin:8px 0}
+#bistro-app .k-modal .k-drawer-bar h2{font-size:22px}
+#bistro-app .k-mobile-dock{display:none}
+#bistro-app .k-notice:empty{display:none}
+#bistro-app .k-notice:not(:empty){position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:16;width:max-content;max-width:min(90vw,560px);border:1px solid var(--k-rule);padding:10px 16px;background:var(--k-panel);color:var(--k-ink);box-shadow:0 5px 25px #0003;border-radius:8px;font-size:12px;pointer-events:none}
+#bistro-app .k-sheet-shade{position:fixed;inset:0;z-index:10;background:#101b1680;display:flex;align-items:flex-end;justify-content:center}
+#bistro-app .k-cart-sheet{width:100%;max-height:90dvh;overflow:hidden;border-radius:18px 18px 0 0;background:var(--k-panel);box-shadow:0 -15px 60px #0003}
+#bistro-app .k-sheet-ticket{position:static;border:0;padding:0!important}
+#bistro-app .k-sheet-ticket .k-ticket{max-height:90dvh;padding:0 20px calc(20px + env(safe-area-inset-bottom));border-top:0;box-shadow:none;overflow:auto;overscroll-behavior:contain}
+#bistro-app .k-sheet-ticket .k-source{display:none}
+#bistro-app .k-sheet-bar{position:sticky;top:0;z-index:2;background:var(--k-panel);display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--k-rule);margin-bottom:12px}
+#bistro-app .k-sheet-bar button{font-size:13px;color:var(--k-sub)}
+#bistro-app .k-ticket-checkout{position:sticky;bottom:0;background:var(--k-panel);padding:10px 0 2px}
+@media(max-width:520px){
+ #bistro-app .k-layout{padding-bottom:108px}
+ #bistro-app .k-mobile-dock{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:var(--k-panel);border-top:1px solid var(--k-rule);box-shadow:0 -4px 20px #0001}
+ #bistro-app .k-mobile-dock strong{font-size:14px;font-weight:600;display:block}
+ #bistro-app .k-mobile-dock small{display:block;font-size:10px;color:var(--k-sub);margin-top:3px}
+ #bistro-app .k-notice:not(:empty){bottom:92px}
+ #bistro-app .k-card-stepper button{min-height:36px;width:30px}
+ #bistro-app .k-search input,#bistro-app .k-modal textarea,#bistro-app .k-comment textarea,#bistro-app .k-editor input,#bistro-app .k-editor textarea{font-size:16px}
+ #bistro-app .k-quick-filters button{min-height:36px}
+ #bistro-app .k-dish-bottom{gap:8px}
+}
+@media(pointer:coarse){#bistro-app .k-card-stepper button{min-width:44px;min-height:44px}}
