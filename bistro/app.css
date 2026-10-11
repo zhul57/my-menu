@@ -78,3 +78,8 @@
  #bistro-app .k-quick-filters{padding:5px 0 0;gap:5px}
  #bistro-app .k-quick-filters button{font-size:10px;padding:3px 8px}
 }
+
+/* Standalone menu snapshot has no shared-order controls. */
+#bistro-app .k-browse-only .k-layout{grid-template-columns:minmax(0,1fr)}
+#bistro-app .k-browse-only{padding-bottom:24px}
+#bistro-app .k-browse-note{color:var(--k-sub);font-size:12px;line-height:1.7;margin:0 0 16px}
